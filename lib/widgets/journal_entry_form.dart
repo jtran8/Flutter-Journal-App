@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
 import '../db/journal_entry_dto.dart';
 
 // Adapted from Week 07 Exploration 03.1 & Week 08 Exploration 05.1
@@ -11,6 +12,7 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
   
   final formKey = GlobalKey<FormState>();
   final entryValues = JournalEntryDTO();
+  int dropdownValue = 0;
   
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,8 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
             titleFormField(),
             SizedBox(height: 20),
             bodyFormField(),
+            SizedBox(height: 20),
+            ratingFormField(),
             SizedBox(height: 10),
             buttonRow(context)
           ]
@@ -66,6 +70,26 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
       validator: (value) {
         if (value.isEmpty) {
           return 'Please enter a Body';
+        } else {
+          return null;
+        }
+      }
+    );
+  }
+
+  Widget ratingFormField() {
+    return TextFormField(
+      autofocus: true,
+      decoration: InputDecoration(
+        labelText: 'Rating', 
+        border: OutlineInputBorder()
+      ),
+      onSaved: (value) {
+        entryValues.rating = int.parse(value);
+      },
+      validator: (value) {
+        if (value != '1' && value != '2' && value != '3' && value != '4') {
+          return 'Please enter a Rating from 1 to 4';
         } else {
           return null;
         }
