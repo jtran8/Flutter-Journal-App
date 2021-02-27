@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
+import '../db/journal_entry_dto.dart';
 
 // Adapted from Week 07 Exploration 03.1 & Week 08 Exploration 05.1
-class EntryValues {
-  String title;
-  String body;
-  int rating;
-  DateTime dateTime;
-  String toString() {
-    return 'Title: $title, Body: $body, Rating: $rating, Date: $dateTime';
-  }
-}
-
 class JournalEntryForm extends StatefulWidget {
   @override
   _JournalEntryFormState createState() => _JournalEntryFormState();
@@ -19,7 +10,7 @@ class JournalEntryForm extends StatefulWidget {
 class _JournalEntryFormState extends State<JournalEntryForm> {
   
   final formKey = GlobalKey<FormState>();
-  final entryValues = EntryValues();
+  final entryValues = JournalEntryDTO();
   
   @override
   Widget build(BuildContext context) {
@@ -28,30 +19,57 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
       child: Form(
         key: formKey,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextFormField(
-              autofocus: true,
-              decoration: InputDecoration(
-                labelText: 'Title', 
-                border: OutlineInputBorder()
-              ),
-              onSaved: (value) {
-                entryValues.title = value;
-              },
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter a text';
-                } else {
-                  return null;
-                }
-              }
-            ),
+            SizedBox(height: 10),
+            titleFormField(),
+            SizedBox(height: 20),
+            bodyFormField(),
             SizedBox(height: 10),
             buttonRow(context)
           ]
         )
       )
+    );
+  }
+
+  Widget titleFormField() {
+    return TextFormField(
+      autofocus: true,
+      decoration: InputDecoration(
+        labelText: 'Title', 
+        border: OutlineInputBorder()
+      ),
+      onSaved: (value) {
+        entryValues.title = value;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter a Title';
+        } else {
+          return null;
+        }
+      }
+    );
+  }
+
+  Widget bodyFormField() {
+    return TextFormField(
+      autofocus: true,
+      decoration: InputDecoration(
+        labelText: 'Body', 
+        border: OutlineInputBorder()
+      ),
+      onSaved: (value) {
+        entryValues.body = value;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Please enter a Body';
+        } else {
+          return null;
+        }
+      }
     );
   }
 
@@ -92,4 +110,3 @@ class _JournalEntryFormState extends State<JournalEntryForm> {
   }
 
 }
-
