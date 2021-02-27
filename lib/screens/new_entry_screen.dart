@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:journal/screens/journal_entries_screen.dart';
+import '../widgets/journal_entry_form.dart';
 
 class NewEntry extends StatelessWidget {
   
@@ -11,12 +12,7 @@ class NewEntry extends StatelessWidget {
       appBar: AppBar(
         title: const Text('New Entry'),
       ),
-      body: Center(child: Text('This is the new entry page.')),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed(JournalEntries.routeName),
-        tooltip: 'Add a journal entry.',
-        child: const Icon(Icons.add),
-      ),
+      body: JournalEntryForm()
     );
   }
 }
