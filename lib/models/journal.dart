@@ -3,7 +3,7 @@
 class Journal {
 
   List<JournalEntry> entries;
-  Journal({ this.entries });
+  Journal({this.entries});
 
   void addEntryToList(entry) {
     entries == null ? entries = [entry] : entries.add(entry);
