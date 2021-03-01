@@ -48,7 +48,7 @@ class _EntriesListState extends State<EntriesList> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Icon(Icons.book_rounded, size: 100),
-        Text("Journal", textAlign: TextAlign.center)
+        Text("Welcome", textAlign: TextAlign.center)
       ]
     );
   }
