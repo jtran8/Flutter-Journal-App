@@ -6,18 +6,17 @@ import '../models/journal_entry.dart';
 import '../models/journal.dart';
 import "../screens/entry_details_screen.dart";
 
-class EntriesList extends StatefulWidget {
+class EntriesListScreen extends StatefulWidget {
   static const routeName = '/';
   
   @override
-  _EntriesListState createState() => _EntriesListState();  
+  _EntriesListScreenState createState() => _EntriesListScreenState();  
 }
 
-class _EntriesListState extends State<EntriesList> {
+class _EntriesListScreenState extends State<EntriesListScreen> {
   
   Journal journal;
 
-  @override
   void initState() {
     super.initState();
     loadJournal();
@@ -48,7 +47,7 @@ class _EntriesListState extends State<EntriesList> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Icon(Icons.book_rounded, size: 100),
-        Text("Welcome", textAlign: TextAlign.center)
+        Text('Welcome', textAlign: TextAlign.center)
       ]
     );
   }
@@ -61,8 +60,12 @@ class _EntriesListState extends State<EntriesList> {
     } else {
       return ListView.builder(itemCount: journal.entries.length, itemBuilder: (context, index) {
         return ListTile(
-          title: Text("${journal.entries[index].title}"),
-          subtitle: Text(format.format(journal.entries[index].dateTime))
+          title: Text('${journal.entries[index].title}'),
+          subtitle: Text(format.format(journal.entries[index].dateTime)),
+          onTap: () => Navigator.of(context).pushNamed(
+            EntryDetailsScreen.routeName,
+            arguments: journal.entries[index]
+          )
         );
       });
     }
@@ -70,7 +73,7 @@ class _EntriesListState extends State<EntriesList> {
 
   FloatingActionButton addButton(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () => Navigator.of(context).pushNamed(NewEntry.routeName, arguments: updateList),
+      onPressed: () => Navigator.of(context).pushNamed(NewEntryScreen.routeName, arguments: updateList),
       tooltip: 'Add a journal entry.',
       child: const Icon(Icons.add),
     );
