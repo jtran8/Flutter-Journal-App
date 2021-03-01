@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'new_entry_screen.dart';
 import '../db/database_manager.dart';
 import '../models/journal_entry.dart';
@@ -41,30 +42,45 @@ class _EntriesListState extends State<EntriesList> {
     );
   }
 
-  Widget buildList(BuildContext context) {
-    return ListView.builder(itemCount: journal.entries.length, itemBuilder: (context, index) {
-      return ListTile(
-        title: Text("${journal.entries[index].title}"),
-        subtitle: Text('${journal.entries[index].dateTime}')
-      );
-    });
-  }
-
   Widget welcome() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Icon(Icons.book_rounded),
-        Text("Journal")
+        Icon(Icons.book_rounded, size: 100),
+        Text("Journal", textAlign: TextAlign.center)
       ]
     );
   }
 
+
+  Widget buildList(BuildContext context) {
+    final format = DateFormat('EEEE, MMMM d, y');
+    if (journal.entries.isEmpty) {
+      return welcome();
+    } else {
+      return ListView.builder(itemCount: journal.entries.length, itemBuilder: (context, index) {
+        return ListTile(
+          title: Text("${journal.entries[index].title}"),
+          subtitle: Text(format.format(journal.entries[index].dateTime))
+        );
+      });
+    }
+  }
+
   FloatingActionButton addButton(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () => Navigator.of(context).pushNamed(NewEntry.routeName),
+      onPressed: () => Navigator.of(context).pushNamed(NewEntry.routeName, arguments: updateList),
       tooltip: 'Add a journal entry.',
       child: const Icon(Icons.add),
     );
+  }
+
+  void updateList(entry) {
+    journal ??= Journal();
+    setState( () {
+      journal.addEntryToList(entry);
+    });
   }
 
 }
