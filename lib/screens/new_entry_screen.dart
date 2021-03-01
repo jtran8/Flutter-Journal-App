@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:journal/screens/entries_list_screen.dart';
 import '../widgets/entry_form.dart';
 
-class NewEntry extends StatelessWidget {
+class NewEntryScreen extends StatelessWidget {
   
   static const routeName = 'newEntry';
   
