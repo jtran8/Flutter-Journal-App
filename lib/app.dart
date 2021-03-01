@@ -6,16 +6,16 @@ import 'screens/new_entry_screen.dart';
 class App extends StatelessWidget {
   
   static final routes = {
-    EntriesList.routeName: (context) => EntriesList(),
-    NewEntry.routeName: (context) => NewEntry(),
-    EntryDetails.routeName: (context) => EntryDetails()
+    EntriesListScreen.routeName: (context) => EntriesListScreen(),
+    NewEntryScreen.routeName: (context) => NewEntryScreen(),
+    EntryDetailsScreen.routeName: (context) => EntryDetailsScreen()
   };
   
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Journal',
-      initialRoute: EntriesList.routeName,
+      initialRoute: EntriesListScreen.routeName,
       routes: routes
     );
   }
