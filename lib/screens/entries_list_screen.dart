@@ -103,11 +103,4 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
     );
   }
 
-  void updateList(entry) {
-    journal ??= Journal();
-    setState( () {
-      journal.addEntryToList(entry);
-    });
-  }
-
 }
