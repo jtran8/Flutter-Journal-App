@@ -45,8 +45,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
       state: widget.state,
       body: LayoutBuilder(builder: layoutDecider),
       routeName: NewEntryScreen.routeName,
-      updater: updateJournal,
-      journal: journal.entries
+      updater: updateJournal
     );
   }
 
@@ -113,6 +112,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
   }
 
   void updateJournal(entry) {
+    journal ??= Journal();
     setState( () {
       journal.addEntry(entry);
     });
