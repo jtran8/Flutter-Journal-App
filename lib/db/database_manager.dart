@@ -7,6 +7,7 @@ import '../models/journal_entry.dart';
 // Adapted from Exploration: Persistence with SQLite
 class DatabaseManager {
 
+  static const String FILE_PATH = 'assets/schema_1.sql.txt';
   static const String DATABASE_FILENAME = 'journal.sqlite3.db';
   static const String SQL_INSERT = 'INSERT INTO journal_entries(title, body, rating, date) VALUES(?, ?, ?, ?)';
   static const String SQL_SELECT = 'SELECT * FROM journal_entries';
@@ -22,7 +23,7 @@ class DatabaseManager {
   }
 
   static Future initialize() async {
-    String SQL_CREATE_SCHEMA = await rootBundle.loadString('assets/schema_1.sql.txt');
+    String SQL_CREATE_SCHEMA = await rootBundle.loadString(FILE_PATH);
     final db = await openDatabase(DATABASE_FILENAME,
       version: 1,
       onCreate: (Database db, int version) async {
