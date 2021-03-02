@@ -42,5 +42,4 @@ class _AppState extends State<App> {
       widget.preferences.setBool(DARK_THEME_KEY, state);
     });
   } 
-
 }
