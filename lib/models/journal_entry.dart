@@ -1,5 +1,4 @@
 class JournalEntry {
-  
   final String title;
   final String body; 
   final int rating;
