@@ -18,11 +18,12 @@ class NewEntryScreen extends StatefulWidget {
 class _NewEntryScreenState extends State<NewEntryScreen> {
   @override
   Widget build(BuildContext context) {
+    final updater = ModalRoute.of(context).settings.arguments;
     return JournalScaffold(
       title: 'New Entry',
       setTheme: widget.setTheme,
       state: widget.state, 
-      body: EntryForm()
+      body: EntryForm(updater: updater)
     );
   }
 }
