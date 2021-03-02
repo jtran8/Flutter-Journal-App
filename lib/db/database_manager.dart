@@ -57,5 +57,4 @@ class DatabaseManager {
     }).toList();
     return journalEntries;
   }
-
 }
