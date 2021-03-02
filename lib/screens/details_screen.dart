@@ -16,6 +16,7 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+
   @override
   Widget build(BuildContext context) {
     final JournalEntry entryData = ModalRoute.of(context).settings.arguments;
