@@ -1,3 +1,5 @@
+// journal: journal model class
+
 import 'journal_entry.dart';
 
 class Journal {
