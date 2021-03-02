@@ -1,3 +1,5 @@
+// journal_scaffold: builds the scaffold and FAB for screens
+
 import 'package:flutter/material.dart';
 import 'journal_drawer.dart';
 
