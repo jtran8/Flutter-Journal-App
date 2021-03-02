@@ -10,7 +10,6 @@ class JournalDrawer extends StatefulWidget {
 }
 
 class _JournalDrawerState extends State<JournalDrawer> {
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
