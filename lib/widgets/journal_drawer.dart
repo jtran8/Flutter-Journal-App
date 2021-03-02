@@ -1,3 +1,5 @@
+// journal_drawer: builds the drawer for UX theme switching
+
 import 'package:flutter/material.dart';
 
 class JournalDrawer extends StatefulWidget {
