@@ -1,4 +1,4 @@
-  import 'journal_entry.dart';
+import 'journal_entry.dart';
 
 class Journal {
 
