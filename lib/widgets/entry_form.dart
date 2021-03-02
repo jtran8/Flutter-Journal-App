@@ -133,5 +133,4 @@ class _EntryFormState extends State<EntryForm> {
   void addDateToEntry() {
     entryValues.dateTime = DateTime.now();
   }
-
 }
