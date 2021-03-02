@@ -1,10 +1,11 @@
+// database_manager: db manager class that handles CRUD
+
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:sqflite/sqflite.dart';
 import 'journal_entry_dto.dart';
 import '../models/journal_entry.dart';
 
-// Adapted from Exploration: Persistence with SQLite
 class DatabaseManager {
   static const String FILE_PATH = 'assets/schema_1.sql.txt';
   static const String DATABASE_FILENAME = 'journal.sqlite3.db';
