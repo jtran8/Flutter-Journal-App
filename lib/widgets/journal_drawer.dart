@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class JournalDrawer extends StatefulWidget {
-  
   final setTheme;
   final state;
   JournalDrawer({Key key, this.setTheme, this.state}) : super(key: key);
