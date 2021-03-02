@@ -1,3 +1,5 @@
+// entries_list_screen: entries list with different UI for empty journal, vertical, and horizontal
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'new_entry_screen.dart';
