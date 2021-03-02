@@ -1,5 +1,5 @@
 /// Jacky Tran
-/// CS492 - Project 3 - Journal
+/// CS492 - Project 4 - Journal
 /// March 1, 2021
 
 import 'package:flutter/material.dart';
