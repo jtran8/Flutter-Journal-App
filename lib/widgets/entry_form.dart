@@ -1,10 +1,16 @@
 // entry_form: build the journal entry form accessed by the FAB
 
 import 'package:flutter/material.dart';
+import 'package:journal/models/journal_entry.dart';
 import '../db/database_manager.dart';
 import '../db/journal_entry_dto.dart';
+import '../models/journal_entry.dart';
 
 class EntryForm extends StatefulWidget {
+  final updater;
+
+  EntryForm({this.updater});
+
   @override
   _EntryFormState createState() => _EntryFormState();
 }
@@ -123,6 +129,8 @@ class _EntryFormState extends State<EntryForm> {
           addDateToEntry();
           final databaseManager = DatabaseManager.getInstance();
           databaseManager.saveJournalEntry(dto: entryValues);
+          var entry = JournalEntry(title: entryValues.title, body: entryValues.body, rating: entryValues.rating, dateTime: entryValues.dateTime);
+          widget.updater(entry);
           Navigator.of(context).pop();
         }
       },
