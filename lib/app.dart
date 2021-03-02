@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/entry_details_screen.dart';
 import 'screens/entries_list_screen.dart';
 import 'screens/new_entry_screen.dart';
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+
+  final SharedPreferences preferences;
+  App({Key key, this.preferences}) : super(key : key);
   
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+
   static final routes = {
     EntriesListScreen.routeName: (context) => EntriesListScreen(),
     NewEntryScreen.routeName: (context) => NewEntryScreen(),
@@ -19,4 +29,5 @@ class App extends StatelessWidget {
       routes: routes
     );
   }
+
 }
