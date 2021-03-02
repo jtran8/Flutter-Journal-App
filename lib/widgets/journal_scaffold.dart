@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'journal_drawer.dart';
 
 class JournalScaffold extends StatelessWidget {
-  
   final body;
   final title;
   final routeName;
