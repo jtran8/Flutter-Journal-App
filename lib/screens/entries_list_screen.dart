@@ -44,7 +44,8 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
       setTheme: widget.setTheme,
       state: widget.state,
       body: LayoutBuilder(builder: layoutDecider),
-      routeName: NewEntryScreen.routeName
+      routeName: NewEntryScreen.routeName,
+      updater: updateJournal
     );
   }
 
@@ -84,7 +85,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
     });
   }
 
-    Widget horizontalLayout(BuildContext context, DateFormat format) {
+  Widget horizontalLayout(BuildContext context, DateFormat format) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -108,5 +109,12 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
         ))
       ],
     );
+  }
+
+  void updateJournal(entry) {
+    journal ??= Journal();
+    setState( () {
+      journal.addEntry(entry);
+    });
   }
 }
