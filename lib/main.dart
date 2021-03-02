@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'app.dart';
 import 'db/database_manager.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([
@@ -13,5 +12,5 @@ void main() async {
     DeviceOrientation.landscapeRight,
   ]);
   await DatabaseManager.initialize();
-  runApp(App());
+  runApp(App(preferences: await SharedPreferences.getInstance()));
 }
