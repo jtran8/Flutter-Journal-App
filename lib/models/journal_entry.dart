@@ -1,3 +1,5 @@
+// journal_entry: journal entry model class
+
 class JournalEntry {
   final String title;
   final String body; 
