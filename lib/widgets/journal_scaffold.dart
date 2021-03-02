@@ -10,10 +10,9 @@ class JournalScaffold extends StatelessWidget {
   final setTheme;
   final state;
   final updater;
-  final journal;
 
   JournalScaffold(
-    {Key key, this.body, this.title, this.routeName, this.setTheme, this.state, this.updater, this.journal}) : super (key : key);
+    {Key key, this.body, this.title, this.routeName, this.setTheme, this.state, this.updater}) : super (key : key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class JournalScaffold extends StatelessWidget {
   FloatingActionButton addButton(BuildContext context) {
     if (routeName != null) {
       return FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed(this.routeName, arguments: {updater, journal}),
+        onPressed: () => Navigator.of(context).pushNamed(this.routeName, arguments: this.updater),
         tooltip: 'Add a journal entry.',
         child: const Icon(Icons.add),
       );
