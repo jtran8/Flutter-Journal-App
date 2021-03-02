@@ -8,7 +8,6 @@ import 'details_screen.dart';
 import '../widgets/journal_scaffold.dart';
 
 class EntriesListScreen extends StatefulWidget {
-  
   static const routeName = '/';
   final setTheme;
   final state;
@@ -20,7 +19,6 @@ class EntriesListScreen extends StatefulWidget {
 }
 
 class _EntriesListScreenState extends State<EntriesListScreen> {
-  
   Journal journal;
 
   @override
