@@ -109,5 +109,4 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
       ],
     );
   }
-
 }
