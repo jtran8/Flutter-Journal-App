@@ -9,7 +9,6 @@ class EntryForm extends StatefulWidget {
 }
 
 class _EntryFormState extends State<EntryForm> {
-  
   final formKey = GlobalKey<FormState>();
   final entryValues = JournalEntryDTO();
   
