@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'journal_drawer.dart';
 
 class JournalScaffold extends StatelessWidget {
-  final Widget body;
+  final body;
   final title;
   final routeName;
+  final setTheme;
+  final state;
 
-  JournalScaffold({this.body, this.title, this.routeName});
+  JournalScaffold({Key key, this.body, this.title, this.routeName, this.setTheme, this.state}) : super (key : key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class JournalScaffold extends StatelessWidget {
       appBar: AppBar(
         title: Text(this.title),
       ),
-      endDrawer: SettingsDrawer(),
+      endDrawer: JournalDrawer(setTheme: setTheme, state: state),
       body: this.body,
       floatingActionButton: addButton(context)
     );
