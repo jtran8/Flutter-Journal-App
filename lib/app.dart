@@ -5,7 +5,6 @@ import 'screens/entries_list_screen.dart';
 import 'screens/new_entry_screen.dart';
 
 class App extends StatefulWidget {
-
   final SharedPreferences preferences;
   App({Key key, this.preferences}) : super(key : key);
   
@@ -14,7 +13,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
   static const DARK_THEME_KEY = 'dark';
   
   @override
