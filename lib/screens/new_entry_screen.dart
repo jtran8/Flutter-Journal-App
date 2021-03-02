@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:journal/screens/entries_list_screen.dart';
 import '../widgets/entry_form.dart';
+import '../widgets/journal_scaffold.dart';
 
 class NewEntryScreen extends StatelessWidget {
   
@@ -8,10 +8,8 @@ class NewEntryScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('New Entry'),
-      ),
+    return JournalScaffold(
+      title: 'New Entry', 
       body: EntryForm()
     );
   }
