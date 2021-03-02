@@ -1,3 +1,7 @@
+/// Jacky Tran
+/// CS492 - Project 3 - Journal
+/// March 1, 2021
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
