@@ -1,3 +1,5 @@
+// details_screen: builds the screen that shows all the details for an entry
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/journal_entry.dart';
