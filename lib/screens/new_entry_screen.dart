@@ -1,3 +1,5 @@
+// new_entry_screen: build the new entry screen
+
 import 'package:flutter/material.dart';
 import '../widgets/entry_form.dart';
 import '../widgets/journal_scaffold.dart';
