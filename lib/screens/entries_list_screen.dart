@@ -32,9 +32,12 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
   void loadJournal() async {
     final databaseManager = DatabaseManager.getInstance();
     List<JournalEntry> journalEntries = await databaseManager.journalEntries();
-    setState( () {
+    if (journalEntries.isNotEmpty) {
+      setState( () {
       journal = Journal(entries: journalEntries);
     });
+    }
+
   }
 
   @override
@@ -64,7 +67,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
   }
 
   Widget buildList(BuildContext context, layout) {
-    if (journal.entries.isEmpty) {
+    if (journal == null) {
       return welcome();
     } else {
       final format = DateFormat('EEEE, MMMM d, y');
