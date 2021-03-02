@@ -4,12 +4,17 @@ import 'new_entry_screen.dart';
 import '../db/database_manager.dart';
 import '../models/journal_entry.dart';
 import '../models/journal.dart';
-import '../screens/entry_details_screen.dart';
+import 'details_screen.dart';
 import '../widgets/journal_scaffold.dart';
 
 class EntriesListScreen extends StatefulWidget {
-  static const routeName = '/';
   
+  static const routeName = '/';
+  final setTheme;
+  final state;
+  
+  EntriesListScreen({Key key, this.setTheme, this.state}) : super(key: key);
+
   @override
   _EntriesListScreenState createState() => _EntriesListScreenState();  
 }
@@ -36,6 +41,8 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
   Widget build(BuildContext context) {
     return JournalScaffold(
       title: 'Journal Entries',
+      setTheme: widget.setTheme,
+      state: widget.state,
       body: LayoutBuilder(builder: layoutDecider),
       routeName: NewEntryScreen.routeName
     );
@@ -70,7 +77,7 @@ class _EntriesListScreenState extends State<EntriesListScreen> {
         title: Text('${journal.entries[index].title}'),
         subtitle: Text(format.format(journal.entries[index].dateTime)),
         onTap: () => Navigator.of(context).pushNamed(
-          EntryDetailsScreen.routeName,
+          DetailsScreen.routeName,
           arguments: journal.entries[index]
         )
       );
