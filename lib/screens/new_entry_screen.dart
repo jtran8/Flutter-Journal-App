@@ -3,7 +3,6 @@ import '../widgets/entry_form.dart';
 import '../widgets/journal_scaffold.dart';
 
 class NewEntryScreen extends StatefulWidget {
-  
   static const routeName = 'newEntry';
   final setTheme;
   final state;
@@ -15,7 +14,6 @@ class NewEntryScreen extends StatefulWidget {
 }
 
 class _NewEntryScreenState extends State<NewEntryScreen> {
-  
   @override
   Widget build(BuildContext context) {
     return JournalScaffold(
