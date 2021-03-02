@@ -4,7 +4,6 @@ import '../models/journal_entry.dart';
 import '../widgets/journal_scaffold.dart';
 
 class DetailsScreen extends StatefulWidget {
-  
   static const routeName = 'DetailsScreen';
   final setTheme;
   final state;
@@ -16,7 +15,6 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-
   @override
   Widget build(BuildContext context) {
     final JournalEntry entryData = ModalRoute.of(context).settings.arguments;
