@@ -1,8 +1,9 @@
+// entry_form: build the journal entry form accessed by the FAB
+
 import 'package:flutter/material.dart';
 import '../db/database_manager.dart';
 import '../db/journal_entry_dto.dart';
 
-// Adapted from Week 07 Exploration 03.1 & Week 08 Exploration 05.1
 class EntryForm extends StatefulWidget {
   @override
   _EntryFormState createState() => _EntryFormState();
