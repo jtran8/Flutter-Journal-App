@@ -1,16 +1,13 @@
-# journal
+# Journal
 
-A new Flutter project.
+A program that models a journal, enabling users to create journal entries, which have a title, body, date and rating.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Display a "welcome" widget when the application starts and there are no journal entries.
+- Provides the user via a toggle presented in a Drawer, the ability to change the theme from light to dark which is persists.
+- Displays a list of existing journal entries, by displaying the title and date of the journal entry.
+- Displays the details of the journal entry, including its title, body, date and numeric rating, when tapped on in the list.
+- Has a horizontal view that shows both entries and details side-by-side.
+- Displays a FloatingActionButton that, when tapped, displays a form for entering attributes of a new journal entry.
+- Create a new journal entry when the form's "Save" button is tapped, and return to the previous screen.
